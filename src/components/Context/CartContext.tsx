@@ -48,21 +48,28 @@ export default function CartContextProvider({ children }: { children: ReactNode 
     const session = useSession()
 
     async function getCart() {
-        if (session.status == 'authenticated') {
-            const response = await fetch('/api/get-cart')
-            const data: CartResponse = await response.json();
-            console.log(data);
-
-            setCartData(data);
-            if (cartData?.data.cartOwner) {
-                localStorage.setItem('userId', cartData?.data.cartOwner)
-
-            }
-            setIsLoading(false);
-
-        }
-
+  if (session.status == "authenticated") {
+    try {
+      const response = await fetch("/api/get-cart");
+      if (!response.ok) {
+        console.error("Failed to fetch cart:", response.status);
+        setCartData(null);
+        return;
+      }
+      const data: CartResponse = await response.json();
+      setCartData(data);
+      if (data?.data?.cartOwner) {
+        localStorage.setItem("userId", data.data.cartOwner);
+      }
+    } catch (err) {
+      console.error("Error fetching cart:", err);
+      setCartData(null);
+    } finally {
+      setIsLoading(false);
     }
+  }
+}
+
     async function clearCart() {
         setIsClearing(true);
 

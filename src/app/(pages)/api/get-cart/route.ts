@@ -5,17 +5,29 @@ import { NextResponse } from "next/server";
 
 
 export async function GET() {
-        const token = await getUserToken()
+  try {
+    const token = await getUserToken();
+    if (!token) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
-    const response = await fetch('https://ecommerce.routemisr.com/api/v1/cart', {
-            method: 'GET',
-            headers: {
-                token: token + ''
-            }
-        });
-        const data:CartResponse  = await response.json();
-        return NextResponse.json(data)
+    const response = await fetch("https://ecommerce.routemisr.com/api/v1/cart", {
+      method: "GET",
+      headers: { token: token },
+    });
+
+    if (!response.ok) {
+      const text = await response.text(); 
+      return NextResponse.json({ error: "Failed to fetch cart", details: text }, { status: response.status });
+    }
+
+    const data: CartResponse = await response.json();
+    return NextResponse.json(data);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message }, { status: 500 });
+  }
 }
+
 export async function DELETE() {
         const token = await getUserToken()
 

@@ -137,7 +137,7 @@ console.log(cartData?.cartId);
      
           </div>
           {/* Empty cart */}
-        </div>: <div className="min-h-[60vh] flex justify-center items-center flex-col">
+        </div>: <div className="min-h-[70vh] flex justify-center items-center flex-col">
           <h2 className='text-2xl mb-4 text-[#A31D1D]'>Your Cart Is Empty</h2>
           <Link href={'/products'}>
                       <Button className=' cursor-pointer'>Add ones</Button>

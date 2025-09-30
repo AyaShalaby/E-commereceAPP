@@ -32,35 +32,3 @@ export default async function middleware(request: NextRequest) {
 
      return NextResponse.next();
 }
-/**
- import { getToken } from "next-auth/jwt";
-import { NextRequest, NextResponse } from "next/server";
-
-const protectedPages = ['/cart', '/profile','/wishlist','/allorders'];
-const authPages = ['/login', '/register'];
-
-export default async function middleware(req: NextRequest) {
-     const token = await getToken({req});
-     console.log(token);
-     
-     if (protectedPages.includes(req.nextUrl.pathname)) {
-        if (token) {
-          return NextResponse.next();
-        }else{
-            const redirectUrl = new URL('/login' , process.env.NEXTAUTH_URL)
-            return NextResponse.redirect(redirectUrl)
-        }
-     }
-
-      if (authPages.includes(req.nextUrl.pathname)) {
-        if (!token) {
-          return NextResponse.next();
-        }else{
-            const redirectUrl = new URL('/' , process.env.NEXTAUTH_URL)
-            return NextResponse.redirect(redirectUrl)
-        }
-     }
-
-     return NextResponse.next();
-}
- */
