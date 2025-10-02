@@ -4,8 +4,8 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <div className="footer w-full border-t-2 pt-10 bg-[#fffdf3]">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+    <div className=" w-full border-t-2 pt-10 bg-[#fffdf3]">
+      <div className=" mx-auto px-6 lg:px-12">
         {/* grid responsive */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-12 gap-y-8 text-[#6D2323]">
           

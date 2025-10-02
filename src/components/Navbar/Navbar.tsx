@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="py-3 bg-[#FEF9E1] text-[#A31D1D] text-3xl font-semibold shadow sticky top-0 z-50">
+      <nav className="py-3 bg-[#FEF9E1] text-[#A31D1D] text-3xl font-semibold shadow sticky top-0 z-50 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -142,23 +142,23 @@ export default function Navbar() {
 
               {/* Mobile Menu Button */}
               <div className="md:hidden">
-                <Sheet open={open} onOpenChange={setOpen}  >
+                <Sheet open={open} onOpenChange={setOpen} >
                   <SheetTrigger>
-                    <MenuIcon className="cursor-pointer" />
+                    <MenuIcon className="cursor-pointer outline-none" />
                   </SheetTrigger>
                   <SheetContent  side="right" className="bg-[#FEF9E1] h-fit max-h-[400px] max-w-[200px] text-center pb-5 rounded-2xl outline-0 " >
                     <div className="flex flex-col gap-4 mt-6  text-[#A31D1D] ">
-                      <Link href="/products" onClick={handleClose} className="border-b-[#8d5c5c2d] border-b pb-2 ">
+                      <Link href="/products" onClick={handleClose} className="border-b-[#8d5c5c2d] border-b pb-3 ">
                         Products
                       </Link>
-                      <Link href="/categories" onClick={handleClose} className="border-b-[#8d5c5c2d] border-b pb-2 ">
+                      <Link href="/categories" onClick={handleClose} className="border-b-[#8d5c5c2d] border-b pb-3">
                         Categories
                       </Link>
-                      <Link href="/brands" onClick={handleClose} className="border-b-[#8d5c5c2d] border-b pb-2 ">
+                      <Link href="/brands" onClick={handleClose} >
                         Brands
                       </Link>
                     {session.status == 'authenticated'&& <>
-                      <Link href="/wishlist" className="flex items-center justify-center border-b-[#8d5c5c2d] border-b pb-2 " onClick={handleClose} >
+                      <Link href="/wishlist" className="flex items-center justify-center border-b-[#8d5c5c2d] border-t-[#8d5c5c2d] border-t border-b pb-3 pt-5" onClick={handleClose} >
                         Wishlist <HeartIcon className="size-4 ms-2 mt-1 "/>
                       </Link>
                       <Link href="/allorders" onClick={handleClose} >

@@ -40,7 +40,7 @@ export default function ForgetPassword() {
 
       if (!res.ok) throw new Error(data.message || "Something went wrong")
 
-      
+      toastNormal("Verification code sent to your email")
       router.push(`/forgetPassword/verifyCode?email=${values.email}`)
     } catch (error: any) {
      toastError(error.message)
