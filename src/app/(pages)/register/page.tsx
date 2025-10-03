@@ -80,7 +80,7 @@ export default function RegisterForm() {
   }
 
   return (
-  <div className="min-h-[60vh] flex flex-col justify-center items-center gap-8 mb-10">
+  <div className="min-h-[90vh] flex flex-col justify-center items-center gap-8 mb-10">
         <h1 className="text-2xl mt-3 font-bold text-[#A31D1D]">
         Register Now
         </h1>

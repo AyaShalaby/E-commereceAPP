@@ -57,7 +57,7 @@ export default function ForgetPassword() {
   return <>
   
   
-    <div className="min-h-[60vh] flex flex-col justify-center items-center gap-8 mb-10">
+    <div className="min-h-[90vh] flex flex-col justify-center items-center gap-8 mb-10">
       <h1 className="text-[18px] font-semibold mb-3 text-center text-[#A31D1D]">
         Enter your email to continue
       </h1>

@@ -49,7 +49,7 @@ export default function VerifyCode() {
   if (!email) return null
 
   return (
-    <div className="min-h-[60vh] flex flex-col justify-center items-center gap-8 mb-10">
+    <div className="min-h-[90vh] flex flex-col justify-center items-center gap-8 mb-10">
       <Card className="p-6 w-sm text-[#A31D1D]">
       <h2 className="text-center text-xl mb-4">Enter Verification Code</h2>
       <Input
