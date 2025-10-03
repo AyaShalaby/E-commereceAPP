@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     const baseUrl = process.env.NEXTAUTH_URL;
 
     const response = await fetch(
-      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}/allorders`,
+      `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartId}?url=${baseUrl}`,
       {
         method: "POST",
         headers: {
